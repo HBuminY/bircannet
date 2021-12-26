@@ -64,10 +64,20 @@ async function routes(fastify, options) {
     //POST
     fastify.post('/kayit', {schema:registerSchema}, async (req, res) => {
         try{
-            let user = new userModel(req.body);
-            user.save(function (err) {
-                if (err) return handleError(err)
-                else {res.send("account created"); console.log("an account was created in mongodb atlas");};
+            await userModel.countDocuments({username:req.body.username}).then(count=>{
+                let userExists = count>0? true:false;
+                if(userExists){
+                    res.redirect("/kayit?register=unsuccesful");
+                }else{
+                    let user = new userModel(req.body);
+                    user.save((err)=>{
+                        if(err){throw err}
+                        else{
+                            res.redirect("/giris?register=succesful");
+                            console.log("an account was created in mongodb atlas");
+                        };
+                    });
+                };
             });
         }catch(e){console.log(e)}
     });
