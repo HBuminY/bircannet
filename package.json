@@ -1,0 +1,29 @@
+{
+  "name": "bircannet",
+  "version": "1.0.0",
+  "description": "A web application with the aim of building a network that will connect people in need of blood/organ donations and donors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HBuminY/bircannet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HBuminY/bircannet/issues"
+  },
+  "homepage": "https://github.com/HBuminY/bircannet#readme",
+  "dependencies": {
+    "fastify": "^3.25.2",
+    "fastify-env": "^2.1.1",
+    "fastify-mongodb": "^4.1.1",
+    "fastify-plugin": "^3.0.0",
+    "fastify-static": "^4.5.0",
+    "nodemon": "^2.0.15"
+  }
+}

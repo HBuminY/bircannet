@@ -1,0 +1,6 @@
+body{
+    background-image: url("/spikes.png");
+}
+@media (max-width: 480p) {
+    .d-sm-flex{padding: 10px;}
+}
